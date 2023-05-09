@@ -22,3 +22,4 @@ nav:
   - Setup: setup.md
   - Basic Terraform Project: basic.md
   - Update and Add Resources: update-and-add.md
+  - Gitlab Pipelines: gitlab.md
