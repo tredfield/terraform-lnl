@@ -7,3 +7,6 @@ include:
 
 build:
   needs: []
+
+kics-iac-sast:
+  needs: []  
