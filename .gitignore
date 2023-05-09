@@ -39,3 +39,5 @@ plan.out
 
 # ignore pem files
 *.pem
+
+.vscode

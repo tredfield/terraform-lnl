@@ -1,17 +1,18 @@
 # Welcome to Terraform+Gitlab Lunch and Learn
 
-For full documentation visit [https://github.com/tredfield/terraform-lnl](https://github.com/tredfield/terraform-lnl).
+For source code visit [https://github.com/tredfield/terraform-lnl](https://github.com/tredfield/terraform-lnl).
 
-## Commands
+We will cover the following topics:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- How to setup terraform locally with AWS
+- Create your first terraform project
+- Expand on the above project
+- Integrate your project into gitlab
 
 ## Project layout
 
-    mkdocs.yml    # The configuration file.
+    main.tf       # Initial terraform configuration
+    outputs.tf    # Initial outputs file
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
