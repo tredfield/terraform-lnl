@@ -12,6 +12,12 @@ include:
 variables:
  TF_STATE_NAME: default
  TF_CACHE_KEY: default
- 
+
 sast:
   stage: test
+
+kics-iac-sast:
+  needs: []
+
+buid:
+  needs: []
