@@ -15,11 +15,13 @@ See:
 # mac
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
+brew install jq
 ```
 
 ``` bash
 # windows
 choco install terraform
+choco install jq
 ```
 
 ## Local AWS Setup

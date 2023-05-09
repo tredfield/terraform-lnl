@@ -40,4 +40,6 @@ plan.out
 # ignore pem files
 *.pem
 
+# other
 .vscode
+main-add.tf
