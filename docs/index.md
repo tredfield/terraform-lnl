@@ -1,6 +1,6 @@
-# Welcome to MkDocs
+# Welcome to Terraform+Gitlab Lunch and Learn
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+For full documentation visit [https://github.com/tredfield/terraform-lnl](https://github.com/tredfield/terraform-lnl).
 
 ## Commands
 
