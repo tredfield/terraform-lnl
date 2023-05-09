@@ -4,6 +4,10 @@ theme:
   features:
     - content.code.annotate
     - content.code.copy
+    - navigation.instant
+  palette:
+    scheme: slate
+    primary: blue
 repo_url: https://github.com/tredfield/terraform-lnl
 markdown_extensions:
   - pymdownx.highlight
@@ -13,7 +17,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
 nav:
-  - Home: index.md
-  - Setup: setup.md
-  - Basic Terraform Project: basic.md
-  - Update and Add Resources: update-and-add.md
+  - Home: "index.md"
+  - Setup: "setup.md"
+  - Basic Terraform Project: "basic.md"
+  - Update and Add Resources: "update-and-add.md"
