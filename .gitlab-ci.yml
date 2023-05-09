@@ -19,5 +19,5 @@ sast:
 kics-iac-sast:
   needs: []
 
-buid:
+build:
   needs: []
