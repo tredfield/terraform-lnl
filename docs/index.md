@@ -1,9 +1,13 @@
 # Welcome to Terraform+Gitlab Lunch and Learn
 
-For source code visit [https://github.com/tredfield/terraform-lnl](https://github.com/tredfield/terraform-lnl).
+For source code visit [https://github.com/tredfield/terraform-lnl](https://github.com/tredfield/terraform-lnl)
 
 We will cover the following topics:
 
+![tf logo](assets/tf-app.png){ align=right }
+
+- The what and why of Terraform
+- Terraform 101
 - How to setup terraform locally with AWS
 - Create your first terraform project
 - Expand on the above project

@@ -4,7 +4,7 @@ Terraform is a Infrastructure as Code tool that automates creating your infrastr
 
 ==}
 
-- With {==IaC==} you “declare” how you want your infrastructure to be. Tools like Terraform make it so
+- With `IaC` you “declare” how you want your infrastructure to be. Tools like Terraform make it so
 - This is much different than how tools of the past provisioned infrastructure that more or less used scripts or “instructions”
 Older tools are usually procedural
 - Terraform is a CLI (command line interface) but often used in automation CI/CD platforms

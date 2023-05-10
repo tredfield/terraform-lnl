@@ -31,7 +31,8 @@ choco install jq
 
 For running terraform locally you need to provide credentials for most Terraform providers. This typically can be done via environment variables. Here is how to setup AWS
 
-Note I use <https://www.passwordstore.org> below for retrieving secrets locally
+!!! tip
+    I use <https://www.passwordstore.org> below for retrieving secrets locally
 
 1. Export AWS credentials
 

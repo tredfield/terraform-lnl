@@ -66,7 +66,6 @@ Now I have these files
 .
 ├── .terraform
 ├── .terraform.lock.hcl
-├── demo.md
 └── main.tf
 ```
 

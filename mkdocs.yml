@@ -28,6 +28,8 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.details
+  - attr_list
+  - md_in_html  
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
