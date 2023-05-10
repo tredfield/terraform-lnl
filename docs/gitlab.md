@@ -153,3 +153,23 @@ aws_s3_bucket.example: Creating...
 aws_s3_bucket.example: Creation complete after 3s [id=terraform-lnl-test-bucket]
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
+
+## Destroy Resources
+
+The great thing about terraform is that you can easily destroy all the resources you have created. When doing a poc or demo this is great feature!
+
+```bash
+terraform plan -destroy -out=plan.out
+```
+
+You should see output
+
+```bash
+Plan: 0 to add, 0 to change, 5 to destroy.
+```
+
+Now run apply
+
+```bash
+terraform apply plan.out
+```
