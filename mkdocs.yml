@@ -5,10 +5,13 @@ theme:
     - content.code.annotate
     - content.code.copy
     - navigation.instant
-    - navigation.footer  
+    - navigation.footer
+    - navigation.sections    
+    - header.autohide    
   palette:
     scheme: slate
     primary: blue
+    accent: light blue
   logo: assets/slalom-logo-black-150x50.png
   favicon: https://slalom.com/themes/custom/slalom/favicon.ico
 extra:
@@ -32,7 +35,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Home: index.md
+  - What is Terraform: what-is-tf.md
   - Why Terraform: why-tf.md
+  - Why Choose Terraform: why-choose-tf.md
   - Terraform 101: tf-101.md
   - Setup: setup.md
   - Basic Terraform Project: basic.md
