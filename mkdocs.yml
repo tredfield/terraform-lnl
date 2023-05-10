@@ -33,10 +33,12 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+plugins:
+  - search
 nav:
   - Home: index.md
   - What is Terraform: what-is-tf.md
-  - Why Terraform: why-tf.md
+  - Why Use Terraform: why-tf.md
   - Why Choose Terraform: why-choose-tf.md
   - Terraform 101: tf-101.md
   - Setup: setup.md

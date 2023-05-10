@@ -1,6 +1,3 @@
-
-## Great, but is Terraform worth it?
-
 {==
 
 Writing terraform code your first time is probably going to seem like a PITA, why not just use the console?

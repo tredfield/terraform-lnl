@@ -1,5 +1,3 @@
-## What is Terraform?
-
 {==
 
 Terraform is a Infrastructure as Code tool that automates creating your infrastructure

@@ -1,5 +1,3 @@
-## Why Choose Terraform?
-
 {==
 
 What about CloudFormation, CDK, Pulumi?
