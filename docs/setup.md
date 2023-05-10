@@ -24,6 +24,9 @@ choco install terraform
 choco install jq
 ```
 
+!!! tip
+    VS Code has great terraform extensions. A must is `HashiCorp Terraform` extension
+
 ## Local AWS Setup
 
 For running terraform locally you need to provide credentials for most Terraform providers. This typically can be done via environment variables. Here is how to setup AWS
@@ -38,6 +41,3 @@ export AWS_SECRET_ACCESS_KEY=$(pass /work/slalom/TerraformDemo/AKIAQINXMUNZQOZIL
 ```
 
 Depending on your client there may be other tools needed to retrieve user key credentials
-
-!!! tip
-    VS Code has great terraform extensions. A must is `HashiCorp Terraform` extension

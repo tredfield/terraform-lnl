@@ -1,6 +1,10 @@
 ## What is Terraform?
 
-Terraform is a Infrastructure as Code tool… that is a mouthful
+{==
+
+Terraform is a Infrastructure as Code tool that automates creating your infrastructure
+
+==}
 
 - With IaC you “declare” how you want your infrastructure to be. Tools like Terraform make it so
 - This is much different than how tools of the past provisioned infrastructure that more or less used scripts or “instructions”
@@ -25,7 +29,12 @@ Main commands:
 
 ## Great, but is Terraform worth it?
 
-- Writing terraform code your first time is probably going to seem like a PITA, why not just use the console?
+{==
+
+Writing terraform code your first time is probably going to seem like a PITA, why not just use the console?
+
+==}
+
 - Terraform is repeatable! Your client will think you are a superhero when they ask if you can create yet another new environment and you say “yes, just give me a few minutes”
 - Terraform gives you a chance to review the changes that will be made before they are applied. And changes are easy to rollback
 - In a disaster you can easily recover an environment in very little time
@@ -34,7 +43,11 @@ Main commands:
 
 ## Why Choose Terraform?
 
+{==
+
 What about CloudFormation, CDK, Pulumi?
+
+==}
 
 - CloudFormation and AWS Cloud Development Kit (CDK) are viable tools if you are only working with AWS
 - Terraform has the advantage of being cloud agnostic and allows you to provision across multiple cloud providers

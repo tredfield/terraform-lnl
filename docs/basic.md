@@ -1,6 +1,6 @@
 # Basic Terraform Project
 
-We will start with a basic terraform project. Below are basics needed to configure a terraform project with an AWS provider
+We will start with a basic terraform project. The below terraform configures an AWS provider and creates an EC2 instance
 
 ## main.tf
 
