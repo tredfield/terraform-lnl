@@ -70,3 +70,12 @@ resource "aws_security_group" "this" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+# create an S3 bucket
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
+
+  tags = {
+    Name = "TerraformDemo"
+  }
+}

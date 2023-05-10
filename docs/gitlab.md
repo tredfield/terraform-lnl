@@ -12,15 +12,27 @@ First step is we will need to configure our `.gitlab-ci.yml`
 !!! tip
     Gitlab also needs to access your AWS account. There are several ways to do this. The easiest being setting CI/CD variables for `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. However, there are more secure ways and your client may have already integrated AWS with Gitlab
 
-Here is our `.gitlab-ci.yml` file
+Configure below in `.gitlab-ci.yml` file
 
 ```yml
-put here
+include:
+  - template: Terraform.latest.gitlab-ci.yml
 ```
+
+Wait, that is it? Yes. Gitlab has all the jobs necessary in the above template
 
 Ok lets push this to gitlab and see what happens
 
-We see it is runs a plan but wants to re-create all the resources. Gitlab doesn't know about the resources we have created because by default we have been using local state. Lets fix that!
+```bash
+git checkout -b feature/demo-gitlab
+git commit -am"fix: add .gitlab-ci.yml"
+git push gitlab
+```
+
+!!! warning
+    It runs a plan but terraform wants to re-create all the resources
+    
+Terraform doesn't know about the resources we have created because we have been using local state. Lets fix that!
 
 ## Configure gitlab to use remote backend
 
@@ -54,3 +66,54 @@ terraform init \
   -backend-config=unlock_method=DELETE \
   -backend-config=retry_wait_min=5
 ```
+
+You should see similar output. When terraform asks to copy your local state to new "http" backend answer `yes`
+
+```bash
+Initializing the backend...
+Do you want to copy existing state to the new backend?
+  Pre-existing state was found while migrating the previous "local" backend to the
+  newly configured "http" backend. No existing state was found in the newly
+  configured "http" backend. Do you want to copy this state to the new "http"
+  backend? Enter "yes" to copy and "no" to start with an empty state.
+
+  Enter a value: yes
+
+
+Successfully configured the backend "http"! Terraform will automatically
+use this backend unless the backend configuration changes.
+
+Initializing provider plugins...
+- Reusing previous version of hashicorp/tls from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/tls v4.0.4
+- Using previously-installed hashicorp/aws v4.66.1
+
+Terraform has been successfully initialized!
+```
+
+Now push updated files to gitlab
+
+```bash
+git commit -am"fix: updating remote backend"
+git push gitlab
+```
+
+Now gitlab should show no changes in the plan because it has the correct state
+
+## Add a new resource and apply with gitlab
+
+Lets add a new resource and let gitlab apply it
+
+First add below to `main.tf`. This will create and `S3` bucket
+
+```hcl
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
+
+  tags = {
+    Name = "TerraformDemo"
+  }
+}
+```
+
