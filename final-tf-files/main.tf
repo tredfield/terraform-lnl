@@ -1,6 +1,8 @@
 # The terraform {} block contains Terraform settings, including the required providers 
 # Terraform will use to provision your infrastructure
 terraform {
+  backend "http" {
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -12,7 +14,7 @@ terraform {
   required_version = ">= 1.2.0"
 }
 
-# Each provider typically requires a corresponding provider block. There can be multiple
+# Required provider requires a corresponding provider block. There can be multiple
 # provider blocks for a given provider. For example to define an AWS provider for each region
 # you plan to deploy infrastructure
 provider "aws" {
@@ -47,6 +49,7 @@ resource "aws_key_pair" "this" {
   public_key = tls_private_key.this.public_key_openssh
 }
 
+# Security group to allow ssh
 resource "aws_security_group" "this" {
   name = "sg_tf_demo"
 
@@ -65,5 +68,14 @@ resource "aws_security_group" "this" {
     # To keep this example simple, we allow incoming SSH requests from any IP. In real-world usage, you should only
     # allow SSH requests from trusted servers, such as a bastion host or VPN server.
     cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# create an S3 bucket
+resource "aws_s3_bucket" "example" {
+  bucket = "terraform-lnl-test-bucket"
+
+  tags = {
+    Name = "TerraformDemo"
   }
 }

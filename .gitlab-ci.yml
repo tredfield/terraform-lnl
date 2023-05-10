@@ -5,7 +5,4 @@ build:
   needs: []
 
 kics-iac-sast:
-  needs: []  
-
-destroy:
-  extends: .terraform:destroy
+  needs: []
