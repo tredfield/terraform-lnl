@@ -108,6 +108,7 @@ Lets add a new resource and let gitlab apply it
 First add below to `main.tf`. This will create and `S3` bucket
 
 ```hcl
+# create an S3 bucket
 resource "aws_s3_bucket" "example" {
   bucket = "my-tf-test-bucket"
 
@@ -117,3 +118,9 @@ resource "aws_s3_bucket" "example" {
 }
 ```
 
+Push to gitlab
+
+```bash
+git commit -am"fix: configure s3 bucket"
+git push gitlab
+```
