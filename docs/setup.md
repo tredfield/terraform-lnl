@@ -38,3 +38,6 @@ export AWS_SECRET_ACCESS_KEY=$(pass /work/slalom/TerraformDemo/AKIAQINXMUNZQOZIL
 ```
 
 Depending on your client there may be other tools needed to retrieve user key credentials
+
+!!! tip
+    VS Code has great terraform extensions. A must is `HashiCorp Terraform` extension

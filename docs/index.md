@@ -11,8 +11,12 @@ We will cover the following topics:
 
 ## Project layout
 
-    main.tf       # Initial terraform configuration
-    outputs.tf    # Initial outputs file
+    main.tf             # Initial terraform configuration
+    outputs.tf          # Initial outputs file
+    .gitlab-ci.yml      # Gitlab ci yaml for gitlab pipelines
+    mkdocs.yml          # mkdocs configuration
+    .terraform.lock.hcl # Terraform lock file
+    final-tf-files/     # Final tf files
     docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+        index.md    # The documentation homepage.
+        ...         # Other markdown pages, images and other files.

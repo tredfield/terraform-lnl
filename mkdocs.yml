@@ -5,20 +5,30 @@ theme:
     - content.code.annotate
     - content.code.copy
     - navigation.instant
+    - navigation.footer  
   palette:
     scheme: slate
     primary: blue
   logo: assets/slalom-logo-black-150x50.png
+  favicon: https://slalom.com/themes/custom/slalom/favicon.ico
+extra:
+  homepage: https://slalom.com
 repo_url: https://github.com/tredfield/terraform-lnl
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.superfences
   - pymdownx.snippets
   - admonition
   - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Home: index.md
+  - Why Terraform: why-tf.md
+  - Terraform 101: tf-101.md
   - Setup: setup.md
   - Basic Terraform Project: basic.md
   - Update and Add Resources: update-and-add.md
