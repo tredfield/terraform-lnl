@@ -6,3 +6,6 @@ build:
 
 kics-iac-sast:
   needs: []  
+
+destroy:
+  extends: .terraform:destroy

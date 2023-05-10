@@ -121,7 +121,7 @@ First add below to `main.tf`. This will create and `S3` bucket
 ```hcl
 # create an S3 bucket
 resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket"
+  bucket = "terraform-lnl-test-bucket"
 
   tags = {
     Name = "TerraformDemo"
@@ -142,4 +142,14 @@ The plan in gitlab should show creating an S3 bucket
 Plan: 1 to add, 0 to change, 0 to destroy.
 ```
 
-Create a merge request and merge to main
+Create a merge request and merge to main. The pipeline should look like below
+
+![Gitlab Pipeline](assets/gitlab-merge.png)
+
+The `deploy` job runs `terraform apply`. It is manual job. Click play button to run it. The output should show
+
+```bash
+aws_s3_bucket.example: Creating...
+aws_s3_bucket.example: Creation complete after 3s [id=terraform-lnl-test-bucket]
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+```
