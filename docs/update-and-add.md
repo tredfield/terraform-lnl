@@ -2,7 +2,7 @@
 
 Lets update our EC2 instance and add a private key pair so we can ssh into it.
 
-## Add a pem key
+## Add a private key
 
 Add the resources below to configure a key
 
@@ -29,7 +29,7 @@ Add the following to outputs.tf to retrieve the private key from terraform
 
 !!! warning
 
-    It is not recommended to add a private key to outputs for production application
+    It is not recommended to add a private key to output for production application
 
 
 ```hcl
@@ -73,8 +73,9 @@ resource "aws_security_group" "this" {
     to_port   = 22
     protocol  = "tcp"
 
-    # To keep this example simple, we allow incoming SSH requests from any IP. In real-world usage, you should only
-    # allow SSH requests from trusted servers, such as a bastion host or VPN server.
+    # To keep this example simple, we allow incoming SSH requests from any IP. 
+    # In real-world usage, you should only allow SSH requests from trusted 
+    # servers, such as a bastion host or VPN server.
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
@@ -83,7 +84,8 @@ resource "aws_security_group" "this" {
 Update ec2 instance `app_server` in `main.tf` to be public accessible and configure security group to allow ssh
 
 ```hcl
-  # This EC2 Instance has a public IP and will be accessible directly from the public Internet
+  # This EC2 Instance has a public IP and will be accessible directly from 
+  # the public Internet
   associate_public_ip_address = true
 
   # Security groups for ssh
@@ -117,14 +119,14 @@ And terraform apply
 terraform apply plan.out
 ```
 
-Create the pem file
+Create the pem file using private key output from terraform
 
 ```bash
 terraform output -json | jq -r '.private_key_pem.value' > tf-demo.pem
 chmod 400 tf-demo.pem
 ```
 
-Connect to ec2 instance
+Connect to ec2 instance retrieving DNS from terraform
 
 ```bash
 ssh -i "tf-demo.pem" ubuntu@$(terraform output -json | jq -r '.public_dns.value')

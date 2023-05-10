@@ -40,6 +40,9 @@ resource "aws_instance" "app_server" {
 }
 ```
 
+!!! tip
+    Tag your resources whenever possible. Tags are just key/value pairs but help identify your resources and can be used for automation. Use consistent conventions for tagging. For example, `Environment` is a good tag to apply
+
 ### terraform block
 
 The `terraform {}` block contains Terraform settings, including the required providers Terraform will use to provision your infrastructure.
@@ -68,6 +71,9 @@ Now I have these files
 ├── .terraform.lock.hcl
 └── main.tf
 ```
+
+!!! note
+    You run init to initialize a project but also need to run it when new `modules` are configured or adding new `providers`
 
 ## Run terraform fmt and terraform validate
 

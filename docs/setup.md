@@ -34,11 +34,12 @@ For running terraform locally you need to provide credentials for most Terraform
 !!! tip
     I use <https://www.passwordstore.org> below for retrieving secrets locally
 
-1. Export AWS credentials
+Export AWS credentials
 
 ```bash
 export AWS_ACCESS_KEY_ID=AKIAQINXMUNZQOZILKJS
 export AWS_SECRET_ACCESS_KEY=$(pass /work/slalom/TerraformDemo/AKIAQINXMUNZQOZILKJS)
 ```
 
-Depending on your client there may be other tools needed to retrieve user key credentials
+!!! warning
+    Using AWS user access keys is not very secure because they are long lived and can be leaked. There are several approaches to retrieve temporary credentials. Work with your client to make sure you are using the most secure approach

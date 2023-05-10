@@ -43,23 +43,23 @@ Gitlab runs these jobs
 !!! warning
     It runs a plan successfully but terraform wants to re-create all the resources
     
-Terraform doesn't know about the resources we have created because we have been using local state. Lets fix that!
+When Terraform runs in Gitlab it doesn't know about the resources we have created because we have been using local state. Lets fix that!
 
-## Configure gitlab to use remote backend
+## Configure terraform to use remote backend
 
-In `main.tf` update the `terraform` block to include the below. This tells terraform to use http backend to store state
+In `main.tf` update the `terraform` block to include the below. This tells terraform to use a remote http backend to store state
 
 ```
   backend "http" {
   }
 ```
 
-Now we need to migrate local state to gitlab. You need to create a gitlab personal access token to do this, see <https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html>
+Now we need to migrate our local state to gitlab. You need to create a gitlab personal access token to do this, see <https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html>
 
 !!! note
     Token needs to have `api` scope
 
-Use the script below setting the `PROJECT_ID` to the corresponding gitlab project and `TF_USERNAME` to your gitlab username
+The script below will instruct terraform to init with remote state. We only need to do this once. You set the `PROJECT_ID` to the corresponding gitlab project and `TF_USERNAME` to your gitlab username and `TF_PASSWORD` to your gitlab personal access token
 
 ```bash
 PROJECT_ID="45873656"

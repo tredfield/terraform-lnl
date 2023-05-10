@@ -47,3 +47,4 @@ nav:
   - Basic Terraform Project: basic.md
   - Update and Add Resources: update-and-add.md
   - Gitlab Pipelines: gitlab.md
+  - Questions and Answers: q-n-a.md
