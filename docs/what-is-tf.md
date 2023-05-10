@@ -1,9 +1,10 @@
 {==
 
-Terraform is a Infrastructure as Code tool that automates creating your infrastructure
+Terraform is an Infrastructure as Code tool that automates creating your infrastructure
 
 ==}
 
+- Terraform allows you to write code to configure your infrastructure. This is referred to Infrastructure as Code (IAC)
 - With `IaC` you “declare” how you want your infrastructure to be. Tools like Terraform make it so
 - This is much different than how tools of the past provisioned infrastructure that more or less used scripts or “instructions”.
 Older tools are usually procedural
