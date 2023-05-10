@@ -73,7 +73,7 @@ resource "aws_security_group" "this" {
 
 # create an S3 bucket
 resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket"
+  bucket = "terraform-lnl-test-bucket"
 
   tags = {
     Name = "TerraformDemo"

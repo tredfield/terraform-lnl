@@ -29,8 +29,19 @@ git commit -am"fix: add .gitlab-ci.yml"
 git push gitlab
 ```
 
+You should see
+
+![Gitlab Pipeline](assets/gitlab-ci.png)
+
+Gitlab runs these jobs
+  
+- validate: `terraform validate`
+- fmt: `terraform fmt`
+- kics-iac-sast: a static scan for IaC code
+- build: `terraform plan`
+
 !!! warning
-    It runs a plan but terraform wants to re-create all the resources
+    It runs a plan successfully but terraform wants to re-create all the resources
     
 Terraform doesn't know about the resources we have created because we have been using local state. Lets fix that!
 
@@ -124,3 +135,11 @@ Push to gitlab
 git commit -am"fix: configure s3 bucket"
 git push gitlab
 ```
+
+The plan in gitlab should show creating an S3 bucket
+
+```bash
+Plan: 1 to add, 0 to change, 0 to destroy.
+```
+
+Create a merge request and merge to main
