@@ -1,8 +1,8 @@
 # The terraform {} block contains Terraform settings, including the required providers 
 # Terraform will use to provision your infrastructure
 terraform {
-backend "http" {
-  }  
+  backend "http" {
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"

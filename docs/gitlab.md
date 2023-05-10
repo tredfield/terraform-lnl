@@ -24,9 +24,33 @@ We see it is runs a plan but wants to re-create all the resources. Gitlab doesn'
 
 ## Configure gitlab to use remote backend
 
-In `main.tf` update the `terraform` block to include
+In `main.tf` update the `terraform` block to include the below. This tells terraform to use http backend to store state
 
 ```
   backend "http" {
   }
+```
+
+Now we need to migrate local state to gitlab. You need to create a gitlab personal access token to do this, see <https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html>
+
+!!! note
+    Token needs to have `api` scope
+
+Use the script below setting the `PROJECT_ID` to the corresponding gitlab project and `TF_USERNAME` to your gitlab username
+
+```bash
+PROJECT_ID="45873656"
+TF_USERNAME="travis.redfield"
+TF_PASSWORD="$(pass /work/slalom/gitlab/travis.redfield/token)"
+TF_ADDRESS="https://gitlab.com/api/v4/projects/${PROJECT_ID}/terraform/state/default"
+
+terraform init \
+  -backend-config=address=${TF_ADDRESS} \
+  -backend-config=lock_address=${TF_ADDRESS}/lock \
+  -backend-config=unlock_address=${TF_ADDRESS}/lock \
+  -backend-config=username=${TF_USERNAME} \
+  -backend-config=password=${TF_PASSWORD} \
+  -backend-config=lock_method=POST \
+  -backend-config=unlock_method=DELETE \
+  -backend-config=retry_wait_min=5
 ```
