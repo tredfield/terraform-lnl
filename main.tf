@@ -9,6 +9,11 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 4.16"
     }
+
+    tls = {
+      source  = "hashicorp/tls"
+      version = "4.0.4"
+    }
   }
 
   # This is terraform version required
@@ -33,7 +38,7 @@ resource "aws_instance" "app_server" {
   associate_public_ip_address = true
 
   # Security groups for ssh
-  vpc_security_group_ids = ["${aws_security_group.this.id}"]
+  vpc_security_group_ids = [aws_security_group.this.id]
 
   tags = {
     Name = "TerraformDemo"
