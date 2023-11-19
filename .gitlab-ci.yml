@@ -1,2 +1,12 @@
-# The Docker image that will be used to build your app
-image: node:lts
+include:
+  - template: Terraform.latest.gitlab-ci.yml
+  - project: slalom-test/devops/gitlab-templates
+    file: templates/mkdocs.yml
+
+# Allow to run immediately
+build:
+  needs: []
+
+# Allow to run immediately
+kics-iac-sast:
+  needs: []
