@@ -1,6 +1,6 @@
 # Welcome to Terraform+Gitlab Lunch and Learn
 
-For source code visit [https://github.com/tredfield/terraform-lnl](https://github.com/tredfield/terraform-lnl)
+For source code visit [https://gitlab.com/slalom-test/terraform-lnl](https://gitlab.com/slalom-test/terraform-lnl)
 
 We will cover the following topics:
 
